@@ -1,0 +1,28 @@
+{
+  "name": "simple-metric-server",
+  "version": "0.0.0",
+  "description": "Show metric in the browser by piping data to the server.",
+  "author": "Florian Goße <florian@essog.de>",
+  "license": "MIT",
+  "main": "index.js",
+  "bin": "cli.js",
+  "homepage": "https://github.com/floriangosse/simple-metric-server#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/floriangosse/simple-metric-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/floriangosse/simple-metric-server/issues"
+  },
+  "keywords": [
+    "server",
+    "metrics",
+    "metric",
+    "web",
+    "cli",
+    "pipe"
+  ],
+  "dependencies": {
+    "meow": "^5.0.0"
+  }
+}
