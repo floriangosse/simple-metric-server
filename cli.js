@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const meow = require('meow');
 const readline = require('readline');
 const { startServer } = require('./');
