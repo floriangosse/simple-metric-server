@@ -23,6 +23,6 @@
     "pipe"
   ],
   "dependencies": {
-    "meow": "^7.0.0"
+    "meow": "^8.0.0"
   }
 }
