@@ -4,6 +4,7 @@
   "description": "Show metric in the browser by piping data to the server.",
   "author": "Florian Goße <florian@essog.de>",
   "license": "MIT",
+  "type": "module",
   "main": "index.js",
   "bin": "cli.js",
   "homepage": "https://github.com/floriangosse/simple-metric-server#readme",
@@ -22,6 +23,9 @@
     "cli",
     "pipe"
   ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "meow": "^9.0.0"
   }

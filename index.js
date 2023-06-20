@@ -1,13 +1,8 @@
-const http = require('http');
-const url = require('url');
-const EventEmitter = require('events');
+import http from 'node:http';
+import url from 'node:url';
+import EventEmitter from 'node:events';
 
-function startServer(options) {
-    const {
-        name,
-        port
-    } = options;
-
+export function startServer({ name, port }) {
     const template = `
         <html>
             <head>
@@ -50,7 +45,7 @@ function startServer(options) {
                 </script>
             </bod>
         </html>
-    `
+    `;
 
     const channel = createChannel();
 
@@ -66,7 +61,7 @@ function startServer(options) {
             response.writeHead(200, {
                 'Content-Type': 'text/event-stream',
                 'Cache-Control': 'no-cache',
-                'Connection': 'keepalive'
+                Connection: 'keepalive'
             });
             response.write('\n');
 
@@ -107,10 +102,7 @@ function createChannel() {
 
     return {
         subscribe,
-        update,
+        update
     };
 }
 
-module.exports = {
-    startServer
-};

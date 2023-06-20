@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
-const meow = require('meow');
-const readline = require('readline');
-const { startServer } = require('./');
+import meow from 'meow';
+import readline from 'node:readline';
+import { startServer } from './index.js';
 
-const cli = meow(`
+const cli = meow(
+    `
     Usage
         $ simple-metric-server
 
@@ -14,16 +15,18 @@ const cli = meow(`
 
     Examples
         $ watch-metric | simple-metric-server --port 8080 --name "User count"
-`, {
-    flags: {
-        port: {
-            type: 'string'
-        },
-        name: {
-            type: 'string'
+`,
+    {
+        flags: {
+            port: {
+                type: 'string'
+            },
+            name: {
+                type: 'string'
+            }
         }
     }
-});
+);
 
 if (isNaN(cli.flags.port)) {
     console.error(`Missing or wrong value for option 'port'`);
