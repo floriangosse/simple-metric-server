@@ -17,6 +17,7 @@ const cli = meow(
         $ watch-metric | simple-metric-server --port 8080 --name "User count"
 `,
     {
+        importMeta: import.meta,
         flags: {
             port: {
                 type: 'string'
