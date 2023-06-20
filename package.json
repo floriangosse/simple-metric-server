@@ -1,6 +1,6 @@
 {
   "name": "simple-metric-server",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Show metric in the browser by piping data to the server.",
   "author": "Florian Goße <florian@essog.de>",
   "license": "MIT",
