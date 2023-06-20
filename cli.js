@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-import meow from 'meow';
 import readline from 'node:readline';
+import getPort from 'get-port';
+import meow from 'meow';
 import { startServer } from './index.js';
 
 const cli = meow(
@@ -29,8 +30,8 @@ const cli = meow(
     }
 );
 
-if (isNaN(cli.flags.port)) {
-    console.error(`Missing or wrong value for option 'port'`);
+if (!!cli.flags.port && isNaN(cli.flags.port)) {
+    console.error(`Invalid value for option 'port'`);
     cli.showHelp();
 }
 if (!cli.flags.name) {
@@ -39,7 +40,7 @@ if (!cli.flags.name) {
 }
 
 const options = {
-    port: parseInt(cli.flags.port),
+    port: !!cli.flags.port ? parseInt(cli.flags.port) : await getPort({ port: 8080 }),
     name: cli.flags.name
 };
 
